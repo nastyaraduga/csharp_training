@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 using System.Threading;
 using NUnit.Framework;
 
-namespace addressbook_web_tests.appManager
+namespace WebAddressbookTests
 {
     /// <summary>
     ///  Создаёт application manager

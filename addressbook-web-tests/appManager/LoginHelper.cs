@@ -2,13 +2,13 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using addressbook_web_tests.model;
+
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
-namespace addressbook_web_tests.appManager
+namespace WebAddressbookTests
 {
     public class LoginHelper : HelperBase
     {

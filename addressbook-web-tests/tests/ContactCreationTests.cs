@@ -5,9 +5,8 @@ using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium;
-using addressbook_web_tests.appManager;
 
-namespace addressbook_web_tests.tests
+namespace WebAddressbookTests
 {
     [TestFixture]
     public class ContactCreationTests : TestBase

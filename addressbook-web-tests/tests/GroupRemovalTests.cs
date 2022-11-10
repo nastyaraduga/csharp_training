@@ -2,10 +2,9 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using addressbook_web_tests.appManager;
 using NUnit.Framework;
 
-namespace addressbook_web_tests.tests
+namespace WebAddressbookTests
 {
     [TestFixture]
     public class GroupRemovalTests : TestBase

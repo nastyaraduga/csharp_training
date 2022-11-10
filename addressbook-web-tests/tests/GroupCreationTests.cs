@@ -2,12 +2,11 @@
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
-using addressbook_web_tests.appManager;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using NUnit.Framework;
 using Assert = NUnit.Framework.Assert;
 
-namespace addressbook_web_tests.tests
+namespace WebAddressbookTests
 {
     [TestFixture]
     public class GroupCreationTests : TestBase

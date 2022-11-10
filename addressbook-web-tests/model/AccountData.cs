@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace addressbook_web_tests.model
+namespace WebAddressbookTests
 {
     /// <summary>
     ///  Класс для работы с данными на странице авторизации
