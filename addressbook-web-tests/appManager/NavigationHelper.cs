@@ -8,14 +8,14 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
-namespace WebAddressbookTests
+namespace addressbook_web_tests.appManager
 {
     public class NavigationHelper : HelperBase
     {
 
         private string baseURL;
 
-        public NavigationHelper(IWebDriver driver, string baseURL) : base (driver)
+        public NavigationHelper(IWebDriver driver, string baseURL) : base(driver)
         {
             this.baseURL = baseURL;
         }

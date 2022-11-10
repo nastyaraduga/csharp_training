@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebAddressbookTests
+namespace addressbook_web_tests.model
 {
     /// <summary>
     ///  Класс для работы с данными на странице создания группы

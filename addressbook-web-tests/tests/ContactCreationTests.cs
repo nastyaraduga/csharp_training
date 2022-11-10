@@ -5,8 +5,9 @@ using System.Threading;
 using NUnit.Framework;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium;
+using addressbook_web_tests.appManager;
 
-namespace WebAddressbookTests
+namespace addressbook_web_tests.tests
 {
     [TestFixture]
     public class ContactCreationTests : TestBase
@@ -17,12 +18,12 @@ namespace WebAddressbookTests
         [Test]
         public void TheUntitledTestCaseTest()
         {
-            navigator.OpenHomePage(); 
-            loginHelper.Login(new AccountData("admin", "secret"));
-            navigator.SelectAddContact();
-            contactHelper.FillContactForm(new ContactData("test","test"));
-            contactHelper.SubmitContactCreation();
-            groupHelper.ReturnToMainPage();
+            app.Navigator.OpenHomePage();
+            app.Auth.Login(new AccountData("admin", "secret"));
+            app.Navigator.SelectAddContact();
+            app.Contacts.FillContactForm(new ContactData("test", "test"));
+            app.Contacts.SubmitContactCreation();
+            app.Groups.ReturnToMainPage();
         }
     }
 

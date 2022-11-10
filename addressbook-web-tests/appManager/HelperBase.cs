@@ -2,7 +2,7 @@
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
-namespace WebAddressbookTests
+namespace addressbook_web_tests.appManager
 {
     public class HelperBase
     {
@@ -10,8 +10,8 @@ namespace WebAddressbookTests
         /// <summary>
         ///  Использование драйвера в работе автотеста
         /// </summary>
-        
-        public HelperBase (IWebDriver driver)
+
+        public HelperBase(IWebDriver driver)
         {
             this.driver = driver;
         }

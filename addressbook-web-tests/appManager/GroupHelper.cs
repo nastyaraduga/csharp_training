@@ -3,18 +3,19 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using addressbook_web_tests.model;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
-namespace WebAddressbookTests
+namespace addressbook_web_tests.appManager
 {
     public class GroupHelper : HelperBase
 
     {
 
-        public GroupHelper(IWebDriver driver): base(driver)
+        public GroupHelper(IWebDriver driver) : base(driver)
         {
         }
 
@@ -46,7 +47,7 @@ namespace WebAddressbookTests
         /// <summary>
         ///  Возврат на страницу группы
         /// </summary>
-        
+
         public void ReturnToGroupsPage()
         {
             driver.FindElement(By.LinkText("groups")).Click();
@@ -81,5 +82,5 @@ namespace WebAddressbookTests
             // driver.FindElement(By.XPath("//form[@action='/addressbook/group.php']")).Click();
             driver.FindElement(By.XPath("(//input[@name ='selected[]'])[" + index + "]")).Click();
         }
-}
+    }
 }

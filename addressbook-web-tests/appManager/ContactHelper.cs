@@ -3,12 +3,13 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
+using addressbook_web_tests.model;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Firefox;
 using OpenQA.Selenium.Support.UI;
 
-namespace WebAddressbookTests
+namespace addressbook_web_tests.appManager
 {
     public class ContactHelper : HelperBase
     {
@@ -21,9 +22,9 @@ namespace WebAddressbookTests
         /// </summary>
 
         public void SubmitContactCreation()
-    {
-        driver.FindElement(By.XPath("//div[@id='content']/form/input[21]")).Click();
-    }
+        {
+            driver.FindElement(By.XPath("//div[@id='content']/form/input[21]")).Click();
+        }
 
         /// <summary>
         ///  Добавление в поля ввода данных contact

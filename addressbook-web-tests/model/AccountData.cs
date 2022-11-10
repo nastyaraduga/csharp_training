@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WebAddressbookTests
+namespace addressbook_web_tests.model
 {
     /// <summary>
     ///  Класс для работы с данными на странице авторизации
@@ -15,7 +15,7 @@ namespace WebAddressbookTests
         private string username;
         private string password;
 
-        public AccountData (string username, string password)
+        public AccountData(string username, string password)
         {
             Username = username;
             Password = password;
