@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace WebAddressbookTests
 {
-   public class AccountData
+    /// <summary>
+    ///  Класс для работы с данными на странице авторизации
+    /// </summary>
+    /// 
+    public class AccountData
     {
         private string username;
         private string password;

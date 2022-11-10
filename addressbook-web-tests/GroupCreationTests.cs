@@ -10,7 +10,11 @@ namespace WebAddressbookTests
 {
     [TestFixture]
     public class GroupCreationTests : TestBase
-    { 
+    {         
+        
+        /// <summary>
+        /// Создание группы в адресной книге
+        /// </summary>
 
         [Test]
         public void GroupCreationTest()

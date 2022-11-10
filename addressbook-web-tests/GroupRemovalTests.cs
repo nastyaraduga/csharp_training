@@ -10,8 +10,12 @@ namespace WebAddressbookTests
     public class GroupRemovalTests : TestBase
     {
 
+        /// <summary>
+        /// Удаление группы в адресной книге
+        /// </summary>
+
         [Test]
-        public void TheUntitledTestCaseTest()
+        public void GroupRemovalTest()
         {
             navigator.OpenHomePage();
             loginHelper.Login(new AccountData("admin", "secret"));

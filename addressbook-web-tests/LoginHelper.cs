@@ -15,7 +15,9 @@ namespace WebAddressbookTests
         {
  
         }
-
+        /// <summary>
+        ///  Ввод данных в поля логин и пароль
+        /// </summary>
         public void Login(AccountData account)
         {
             driver.FindElement(By.Name("user")).Clear();

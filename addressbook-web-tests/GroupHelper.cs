@@ -18,10 +18,17 @@ namespace WebAddressbookTests
         {
         }
 
+        /// <summary>
+        ///  Клик на "New group" для открытия окна создания группы
+        /// </summary>
         public void InitGroupCreation()
         {
             driver.FindElement(By.Name("new")).Click();
         }
+
+        /// <summary>
+        ///  Ввод данных в поля на странице создания группы 
+        /// </summary>
 
         public void FillGroupForm(GroupData group)
         {
@@ -36,25 +43,39 @@ namespace WebAddressbookTests
             driver.FindElement(By.Name("group_footer")).SendKeys(group.Footer);
             driver.FindElement(By.Name("submit")).Click();
         }
+        /// <summary>
+        ///  Возврат на страницу группы
+        /// </summary>
+        
         public void ReturnToGroupsPage()
         {
             driver.FindElement(By.LinkText("groups")).Click();
         }
+        /// <summary>
+        ///  Клик на кнопку "delete groups" для удаления группы
+        /// </summary>
 
         public void RemoveGroup()
         {
             driver.FindElement(By.Name("delete")).Click();
         }
-        public void ReturnToMainPage()
-        {
-            driver.FindElement(By.LinkText("Logout")).Click();
-        }
-
+        /// <summary>
+        ///  Создание группы по клику на "Enter information"
+        /// </summary>
         public void SubmitGroupCreation()
         {
             driver.FindElement(By.LinkText("groups")).Click();
         }
-
+        /// <summary>
+        ///  Возврат на стартовую главную страницу, без регистрации
+        /// </summary>
+        public void ReturnToMainPage()
+        {
+            driver.FindElement(By.LinkText("Logout")).Click();
+        }
+        /// <summary>
+        ///  Выбор группы из списка 
+        /// </summary>
         public void SelectGroup(int index)
         {
             // driver.FindElement(By.XPath("//form[@action='/addressbook/group.php']")).Click();

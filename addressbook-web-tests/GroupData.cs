@@ -6,6 +6,9 @@ using System.Threading.Tasks;
 
 namespace WebAddressbookTests
 {
+    /// <summary>
+    ///  Класс для работы с данными на странице создания группы
+    /// </summary>
     public class GroupData
     {
         private string name;
