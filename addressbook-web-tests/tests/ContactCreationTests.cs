@@ -15,10 +15,8 @@ namespace WebAddressbookTests
         /// Создание контакта в адресной книге
         /// </summary>
         [Test]
-        public void TheUntitledTestCaseTest()
+        public void ContactCreationTest()
         {
-            app.Navigator.OpenHomePage();
-            app.Auth.Login(new AccountData("admin", "secret"));
             app.Navigator.SelectAddContact();
             app.Contacts.FillContactForm(new ContactData("test", "test"));
             app.Contacts.SubmitContactCreation();

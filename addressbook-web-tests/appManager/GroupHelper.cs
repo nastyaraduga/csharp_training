@@ -21,16 +21,17 @@ namespace WebAddressbookTests
         /// <summary>
         ///  Клик на "New group" для открытия окна создания группы
         /// </summary>
-        public void InitGroupCreation()
+        public GroupHelper InitGroupCreation()
         {
             driver.FindElement(By.Name("new")).Click();
+            return this;
         }
 
         /// <summary>
         ///  Ввод данных в поля на странице создания группы 
         /// </summary>
 
-        public void FillGroupForm(GroupData group)
+        public GroupHelper FillGroupForm(GroupData group)
         {
             driver.FindElement(By.Name("group_name")).Click();
             driver.FindElement(By.Name("group_name")).Clear();
@@ -42,44 +43,51 @@ namespace WebAddressbookTests
             driver.FindElement(By.Name("group_footer")).Clear();
             driver.FindElement(By.Name("group_footer")).SendKeys(group.Footer);
             driver.FindElement(By.Name("submit")).Click();
+            return this;
         }
         /// <summary>
         ///  Возврат на страницу группы
         /// </summary>
 
-        public void ReturnToGroupsPage()
+        public GroupHelper ReturnToGroupsPage()
         {
             driver.FindElement(By.LinkText("groups")).Click();
+            return this;
         }
         /// <summary>
         ///  Клик на кнопку "delete groups" для удаления группы
         /// </summary>
 
-        public void RemoveGroup()
+        public GroupHelper RemoveGroup()
         {
             driver.FindElement(By.Name("delete")).Click();
+            return this;
         }
         /// <summary>
         ///  Создание группы по клику на "Enter information"
         /// </summary>
-        public void SubmitGroupCreation()
-        {
+        public GroupHelper SubmitGroupCreation()
+                    {
             driver.FindElement(By.LinkText("groups")).Click();
+            return this;
         }
         /// <summary>
         ///  Возврат на стартовую главную страницу, без регистрации
         /// </summary>
-        public void ReturnToMainPage()
+        public GroupHelper ReturnToMainPage()
         {
             driver.FindElement(By.LinkText("Logout")).Click();
+            return this;
         }
         /// <summary>
         ///  Выбор группы из списка 
         /// </summary>
-        public void SelectGroup(int index)
+        public GroupHelper SelectGroup(int index)
+
         {
             // driver.FindElement(By.XPath("//form[@action='/addressbook/group.php']")).Click();
             driver.FindElement(By.XPath("(//input[@name ='selected[]'])[" + index + "]")).Click();
+            return this;
         }
     }
 }
