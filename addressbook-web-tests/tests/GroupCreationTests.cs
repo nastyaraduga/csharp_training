@@ -20,12 +20,11 @@ namespace WebAddressbookTests
         public void GroupCreationTest()
         {
 
-            app.Navigator.GoToGroupsPage();
-            app.Groups
-                .InitGroupCreation()
-                .FillGroupForm(new GroupData("test"))
-                .SubmitGroupCreation()
-                .ReturnToMainPage();
+            GroupData group = new GroupData("test");
+            group.Header = "test1";
+            group.Footer = "test2";
+            app.Groups.Create(group);
         }
     }
 }
+

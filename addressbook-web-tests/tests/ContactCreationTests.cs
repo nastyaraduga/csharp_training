@@ -18,8 +18,8 @@ namespace WebAddressbookTests
         public void ContactCreationTest()
         {
             app.Navigator.SelectAddContact();
-            app.Contacts.FillContactForm(new ContactData("test", "test"));
-            app.Contacts.SubmitContactCreation();
+            app.Contacts.FillContactForm(new ContactData("test", "test"))
+                        .SubmitContactCreation();
             app.Groups.ReturnToMainPage();
         }
     }
