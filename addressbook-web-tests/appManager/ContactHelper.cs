@@ -48,5 +48,39 @@ namespace WebAddressbookTests
             driver.FindElement(By.Name("lastname")).SendKeys(contact.Lastname);
             return this;
         }
+
+        public ContactHelper Modify(int v, ContactData newContact)
+        {
+            manager.Navigator.OpenHomePage();
+            SelectContact(v);
+            GoToEditContact();
+            SubmitContactModification(newContact);
+            ReturnToMainPage();
+            return this;
+        }
+
+        public ContactHelper SelectContact(int index)
+        {
+            driver.FindElement(By.XPath("(//input[@name ='selected[]'])[" + index + "]")).Click();
+            return this;
+        }
+
+        public ContactHelper GoToEditContact()
+        {
+            driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
+            return this;
+        }
+
+        public ContactHelper ReturnToMainPage()
+        {
+            driver.FindElement(By.LinkText("Logout")).Click();
+            return this;
+        }
+
+        public ContactHelper SubmitContactModification(ContactData newContact)
+        {
+            driver.FindElement(By.XPath("//div[@id='content']/form/input[22]")).Click();
+            return this;
+        }
     }
 }

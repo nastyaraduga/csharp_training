@@ -19,6 +19,7 @@ namespace WebAddressbookTests
         {
             this.baseURL = baseURL;
         }
+
         /// <summary>
         ///  Открыть главную страницу http://http://localhost/addressbook
         /// </summary>
@@ -27,6 +28,7 @@ namespace WebAddressbookTests
         {
             driver.Navigate().GoToUrl(baseURL + "/addressbook/");
         }
+
         /// <summary>
         ///  Открыть страницу http://localhost/addressbook/group.php
         /// </summary>
