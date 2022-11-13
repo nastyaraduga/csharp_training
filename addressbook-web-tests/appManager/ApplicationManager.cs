@@ -17,9 +17,8 @@ namespace WebAddressbookTests
         /// </summary>
         /// 
         protected IWebDriver driver;
-        private StringBuilder verificationErrors;
+        protected string verificationErrors;
         protected string baseURL;
-
 
         protected LoginHelper loginHelper;
         protected NavigationHelper navigator;
