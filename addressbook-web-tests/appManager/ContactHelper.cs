@@ -19,6 +19,13 @@ namespace WebAddressbookTests
         /// <summary>
         ///  Выбор раздела "add new"
         /// </summary>
+        public ContactHelper Create(ContactData contact)
+        {
+            manager.Navigator.SelectAddContact();
+            FillContactForm(contact);
+            SubmitContactCreation();
+            return this;
+        }
 
         public ContactHelper SubmitContactCreation()
         {
