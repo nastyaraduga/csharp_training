@@ -27,6 +27,9 @@ namespace WebAddressbookTests
             return this;
         }
 
+        /// <summary>
+        /// Клик на кнопку update при создания контакта
+        /// </summary>
         public ContactHelper SubmitContactCreation()
         {
             driver.FindElement(By.XPath("//div[@id='content']/form/input[21]")).Click();
@@ -49,6 +52,9 @@ namespace WebAddressbookTests
             return this;
         }
 
+        /// <summary>
+        ///  Шаги по созданию контакта для автотеста
+        /// </summary>
         public ContactHelper Modify(int v, ContactData newContact)
         {
             manager.Navigator.OpenHomePage();
@@ -58,25 +64,37 @@ namespace WebAddressbookTests
             ReturnToMainPage();
             return this;
         }
+        /// <summary>
+        ///  Проставление галки в чекбокс контакта
+        /// </summary>
 
         public ContactHelper SelectContact(int index)
         {
             driver.FindElement(By.XPath("(//input[@name ='selected[]'])[" + index + "]")).Click();
             return this;
         }
-
+        /// <summary>
+        ///  Клик на элемент редактирования контакта
+        /// </summary>
+ 
         public ContactHelper GoToEditContact()
         {
             driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
             return this;
         }
 
+        /// <summary>
+        ///  Возврат стартовую страницу
+        /// </summary>
+
         public ContactHelper ReturnToMainPage()
         {
             driver.FindElement(By.LinkText("Logout")).Click();
             return this;
         }
-
+        /// <summary>
+        ///  Клик на кнопку update при редактировании контакта
+        /// </summary>
         public ContactHelper SubmitContactModification(ContactData newContact)
         {
             driver.FindElement(By.XPath("//div[@id='content']/form/input[22]")).Click();

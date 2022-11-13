@@ -17,6 +17,9 @@ namespace WebAddressbookTests
         public GroupHelper(ApplicationManager manager) : base(manager)
         {
         }
+        /// <summary>
+        ///  Шаги по созданию группы для автотеста
+        /// </summary>
         public GroupHelper Create(GroupData group)
         {
             manager.Navigator.GoToGroupsPage();
@@ -26,7 +29,9 @@ namespace WebAddressbookTests
             ReturnToMainPage(); 
             return this;
         }
-
+        /// <summary>
+        ///  Шаги по удалению группы для автотеста
+        /// </summary>
         public GroupHelper Remove(int v)
         {
             manager.Navigator.GoToGroupsPage();
@@ -37,6 +42,9 @@ namespace WebAddressbookTests
             return this;
         }
 
+        /// <summary>
+        ///  Шаги по изменению группы для автотеста
+        /// </summary>
         public GroupHelper Modify(int v, GroupData newData)
         {
          manager.Navigator.GoToGroupsPage();
@@ -119,12 +127,17 @@ namespace WebAddressbookTests
             driver.FindElement(By.XPath("(//input[@name ='selected[]'])[" + index + "]")).Click();
             return this;
         }
+        /// <summary>
+        ///  Клик на кнопу update
+        /// </summary>
         public GroupHelper SubmitGroupModification()
         {
             driver.FindElement(By.Name("update")).Click();
             return this;
         }
-
+        /// <summary>
+        ///  Клик на кнопку edit
+        /// </summary>
         public GroupHelper InitGroupModification()
         {
             driver.FindElement(By.Name("edit")).Click();
