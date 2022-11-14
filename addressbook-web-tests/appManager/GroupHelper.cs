@@ -53,7 +53,7 @@ namespace WebAddressbookTests
             FillGroupForm(newData);
             SubmitGroupModification();
             ReturnToGroupsPage();
-
+            ReturnToMainPage();
             return this;
         }
 
@@ -143,8 +143,5 @@ namespace WebAddressbookTests
             driver.FindElement(By.Name("edit")).Click();
             return this;
         }
-
-
-
     }
 }

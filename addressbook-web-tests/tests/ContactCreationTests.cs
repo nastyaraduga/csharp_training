@@ -18,7 +18,7 @@ namespace WebAddressbookTests
         public void ContactCreationTest()
         {
 
-            ContactData contact = new ContactData("Иванов","Иван");
+            ContactData contact = new ContactData("Петров","Петр");
             app.Contacts.Create(contact);
             app.Groups.ReturnToMainPage();
         }
