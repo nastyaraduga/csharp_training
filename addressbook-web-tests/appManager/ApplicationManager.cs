@@ -37,7 +37,6 @@ namespace WebAddressbookTests
             groupHelper = new GroupHelper(this);
             contactHelper = new ContactHelper(this);
 
-
         }
         public IWebDriver Driver 
         { 

@@ -67,17 +67,16 @@ namespace WebAddressbookTests
         /// <summary>
         ///  Шаги по удалению контакта для автотеста
         /// </summary>
-        /*
+
         public ContactHelper Remove(int v)
         {
             manager.Navigator.OpenHomePage();
-            SelectContact(v);
-            RemoveContact();
-            AlertRemove();
+            RemoutContact();
+            CloseAlertAndGetItsText(true);
             ReturnToMainPage();
             return this;
         }
-        */
+
 
             /// <summary>
             ///  Проставление галки в чекбокс контакта
@@ -120,5 +119,39 @@ namespace WebAddressbookTests
                 driver.FindElement(By.XPath("//div[@id='content']/form/input[22]")).Click();
                 return this;
             }
+        /// <summary>
+        ///  Выделение первого контакта и клик на кнопку delete
+        /// </summary>
+        public ContactHelper RemoutContact()
+        {
+            driver.FindElement(By.Id("18")).Click();
+            driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
+            return this;
         }
+
+
+        /// <summary>
+        ///  Alert окно с удалением контакта
+        /// </summary>
+        public ContactHelper CloseAlertAndGetItsText(bool acceptNextAlert)
+        {
+            try
+            {
+                IAlert alert = driver.SwitchTo().Alert();
+                if (acceptNextAlert)
+                {
+                    alert.Accept();
+                }
+                else
+                {
+                    alert.Dismiss();
+                }
+            }
+            finally
+            {
+            }
+            return this;
+        }
+
     }
+ }
