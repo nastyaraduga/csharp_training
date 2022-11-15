@@ -25,7 +25,6 @@ namespace WebAddressbookTests
         protected GroupHelper groupHelper;
         protected ContactHelper contactHelper;
 
-
         public ApplicationManager()
         {
             FirefoxOptions options = new FirefoxOptions();
@@ -37,6 +36,7 @@ namespace WebAddressbookTests
             navigator = new NavigationHelper(this,baseURL);
             groupHelper = new GroupHelper(this);
             contactHelper = new ContactHelper(this);
+
 
         }
         public IWebDriver Driver 

@@ -65,40 +65,60 @@ namespace WebAddressbookTests
             return this;
         }
         /// <summary>
-        ///  Проставление галки в чекбокс контакта
+        ///  Шаги по удалению контакта для автотеста
         /// </summary>
-
-        public ContactHelper SelectContact(int index)
+        /*
+        public ContactHelper Remove(int v)
         {
-            driver.FindElement(By.XPath("(//input[@name ='selected[]'])[" + index + "]")).Click();
+            manager.Navigator.OpenHomePage();
+            SelectContact(v);
+            RemoveContact();
+            AlertRemove();
+            ReturnToMainPage();
             return this;
         }
-        /// <summary>
-        ///  Клик на элемент редактирования контакта
-        /// </summary>
- 
-        public ContactHelper GoToEditContact()
-        {
-            driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
-            return this;
-        }
+        */
 
-        /// <summary>
-        ///  Возврат стартовую страницу
-        /// </summary>
+            /// <summary>
+            ///  Проставление галки в чекбокс контакта
+            /// </summary>
 
-        public ContactHelper ReturnToMainPage()
-        {
-            driver.FindElement(By.LinkText("Logout")).Click();
-            return this;
-        }
-        /// <summary>
-        ///  Клик на кнопку update при редактировании контакта
-        /// </summary>
-        public ContactHelper SubmitContactModification(ContactData newContact)
-        {
-            driver.FindElement(By.XPath("//div[@id='content']/form/input[22]")).Click();
-            return this;
+            public ContactHelper SelectContact(int index)
+            {
+                driver.FindElement(By.XPath("(//input[@name ='selected[]'])[" + index + "]")).Click();
+                return this;
+            }
+            /// <summary>
+            ///  Клик на элемент редактирования контакта
+            /// </summary>
+
+            public ContactHelper GoToEditContact()
+            {
+                driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
+                return this;
+            }
+            public ContactHelper RemoveContact()
+            {
+                driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
+                return this;
+            }
+
+            /// <summary>
+            ///  Возврат стартовую страницу
+            /// </summary>
+
+            public ContactHelper ReturnToMainPage()
+            {
+                driver.FindElement(By.LinkText("Logout")).Click();
+                return this;
+            }
+            /// <summary>
+            ///  Клик на кнопку update при редактировании контакта
+            /// </summary>
+            public ContactHelper SubmitContactModification(ContactData newContact)
+            {
+                driver.FindElement(By.XPath("//div[@id='content']/form/input[22]")).Click();
+                return this;
+            }
         }
     }
-}
