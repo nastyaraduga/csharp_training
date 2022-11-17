@@ -17,5 +17,15 @@ namespace WebAddressbookTests
             this.manager = manager;
             driver = manager.Driver;
         }
+        //Создан метод для ввода текста при выполнении автотеста
+        public void Type(By locator, string text)
+        {
+            if (text != null) // если текст не NULL то заполняем поля
+            {
+                driver.FindElement(locator).Click();
+                driver.FindElement(locator).Clear();
+                driver.FindElement(locator).SendKeys(text);
+            }
+        }
     }
 }
