@@ -119,7 +119,7 @@ namespace WebAddressbookTests
         /// </summary>
         public ContactHelper RemoutContact()
         {
-            driver.FindElement(By.Id("18")).Click();
+            driver.FindElement(By.Id("2")).Click();
             driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
             return this;
         }

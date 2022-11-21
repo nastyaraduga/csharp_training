@@ -100,7 +100,7 @@ namespace WebAddressbookTests
         /// </summary>
         public GroupHelper SubmitGroupCreation()
         {
-            driver.FindElement(By.LinkText("groups")).Click();
+            driver.FindElement(By.Name("submit")).Click();
             return this;
         }
         /// <summary>
