@@ -5,10 +5,10 @@ using System.Threading;
 using NUnit.Framework;
 
 namespace WebAddressbookTests
+{
+    [TestFixture]
+        public class GroupModificationTests : AuthTestBase
     {
-        [TestFixture]
-        public class GroupModificationTests : TestBase
-        {
              /// <summary>
             /// Редактирование группы в адресной книге
             /// </summary>

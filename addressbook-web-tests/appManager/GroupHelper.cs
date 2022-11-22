@@ -108,7 +108,7 @@ namespace WebAddressbookTests
         /// </summary>
         public GroupHelper ReturnToMainPage()
         {
-            driver.FindElement(By.LinkText("Logout")).Click();
+            driver.FindElement(By.LinkText("groups")).Click();
             return this;
         }
         /// <summary>

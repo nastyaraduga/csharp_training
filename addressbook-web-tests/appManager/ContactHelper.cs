@@ -103,7 +103,7 @@ namespace WebAddressbookTests
 
             public ContactHelper ReturnToMainPage()
             {
-                driver.FindElement(By.LinkText("Logout")).Click();
+                driver.FindElement(By.LinkText("home")).Click();
                 return this;
             }
             /// <summary>
