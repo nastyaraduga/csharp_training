@@ -1,10 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using NUnit.Framework;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium;
+﻿using NUnit.Framework;
 
 namespace WebAddressbookTests
 {
@@ -18,7 +12,7 @@ namespace WebAddressbookTests
         public void ContactCreationTest()
         {
 
-            ContactData contact = new ContactData("Петров","Петр");
+            ContactData contact = new ContactData("Петров", "Петр");
             app.Contacts.Create(contact);
             app.Groups.ReturnToMainPage();
         }

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using NUnit.Framework;
-using Assert = NUnit.Framework.Assert;
+﻿using NUnit.Framework;
 
 namespace WebAddressbookTests
 {

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
 
 namespace WebAddressbookTests
 {
@@ -37,7 +29,7 @@ namespace WebAddressbookTests
             Type(By.Name("pass"), account.Password);
             driver.FindElement(By.XPath("//input[@value='Login']")).Click();
         }
-        public void Logout ()
+        public void Logout()
         {
             if (IsLoggedIn())
             {
@@ -51,9 +43,9 @@ namespace WebAddressbookTests
 
         public bool IsLoggedIn(AccountData account)
         {
-           return IsLoggedIn()
-                && driver.FindElement(By.Name("logout")).FindElement(By.TagName("b")).Text 
-                == "("+ account.Username + ")";
+            return IsLoggedIn()
+                 && driver.FindElement(By.Name("logout")).FindElement(By.TagName("b")).Text
+                 == "(" + account.Username + ")";
         }
     }
 }

@@ -1,12 +1,4 @@
-﻿using System;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
 
 namespace WebAddressbookTests
 {
@@ -73,47 +65,47 @@ namespace WebAddressbookTests
         }
 
 
-            /// <summary>
-            ///  Проставление галки в чекбокс контакта
-            /// </summary>
+        /// <summary>
+        ///  Проставление галки в чекбокс контакта
+        /// </summary>
 
-            public ContactHelper SelectContact(int index)
-            {
-                driver.FindElement(By.XPath("(//input[@name ='selected[]'])[" + index + "]")).Click();
-                return this;
-            }
-            /// <summary>
-            ///  Клик на элемент редактирования контакта
-            /// </summary>
+        public ContactHelper SelectContact(int index)
+        {
+            driver.FindElement(By.XPath("(//input[@name ='selected[]'])[" + index + "]")).Click();
+            return this;
+        }
+        /// <summary>
+        ///  Клик на элемент редактирования контакта
+        /// </summary>
 
-            public ContactHelper GoToEditContact()
-            {
-                driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
-                return this;
-            }
-            public ContactHelper RemoveContact()
-            {
-                driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
-                return this;
-            }
+        public ContactHelper GoToEditContact()
+        {
+            driver.FindElement(By.XPath("//img[@alt='Edit']")).Click();
+            return this;
+        }
+        public ContactHelper RemoveContact()
+        {
+            driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
+            return this;
+        }
 
-            /// <summary>
-            ///  Возврат стартовую страницу
-            /// </summary>
+        /// <summary>
+        ///  Возврат стартовую страницу
+        /// </summary>
 
-            public ContactHelper ReturnToMainPage()
-            {
-                driver.FindElement(By.LinkText("home")).Click();
-                return this;
-            }
-            /// <summary>
-            ///  Клик на кнопку update при редактировании контакта
-            /// </summary>
-            public ContactHelper SubmitContactModification(ContactData newContact)
-            {
-                driver.FindElement(By.XPath("//div[@id='content']/form/input[22]")).Click();
-                return this;
-            }
+        public ContactHelper ReturnToMainPage()
+        {
+            driver.FindElement(By.LinkText("home")).Click();
+            return this;
+        }
+        /// <summary>
+        ///  Клик на кнопку update при редактировании контакта
+        /// </summary>
+        public ContactHelper SubmitContactModification(ContactData newContact)
+        {
+            driver.FindElement(By.XPath("//div[@id='content']/form/input[22]")).Click();
+            return this;
+        }
         /// <summary>
         ///  Выделение первого контакта и клик на кнопку delete
         /// </summary>
@@ -149,4 +141,4 @@ namespace WebAddressbookTests
         }
 
     }
- }
+}

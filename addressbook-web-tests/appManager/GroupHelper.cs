@@ -1,12 +1,4 @@
-﻿using System;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading;
-using NUnit.Framework;
-using OpenQA.Selenium;
-using OpenQA.Selenium.Firefox;
-using OpenQA.Selenium.Support.UI;
+﻿using OpenQA.Selenium;
 
 namespace WebAddressbookTests
 {
@@ -27,7 +19,7 @@ namespace WebAddressbookTests
             InitGroupCreation();
             FillGroupForm(group);
             SubmitGroupCreation();
-            ReturnToMainPage(); 
+            ReturnToMainPage();
             return this;
         }
         /// <summary>
@@ -48,7 +40,7 @@ namespace WebAddressbookTests
         /// </summary>
         public GroupHelper Modify(int v, GroupData newData)
         {
-         manager.Navigator.GoToGroupsPage();
+            manager.Navigator.GoToGroupsPage();
             SelectGroup(v);
             InitGroupModification();
             FillGroupForm(newData);
@@ -78,7 +70,7 @@ namespace WebAddressbookTests
             Type(By.Name("group_footer"), group.Footer);
             return this;
         }
-         /// <summary>
+        /// <summary>
         ///  Возврат на страницу группы
         /// </summary>
 
