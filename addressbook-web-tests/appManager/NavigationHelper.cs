@@ -26,7 +26,8 @@ namespace WebAddressbookTests
         }
 
         /// <summary>
-        ///  Открыть страницу http://localhost/addressbook/group.php
+        ///  Если открыта страница http://localhost/addressbook/
+        ///  то ничего не нужно делать
         /// </summary>
 
         public void GoToGroupsPage()
@@ -39,10 +40,16 @@ namespace WebAddressbookTests
             driver.FindElement(By.LinkText("groups")).Click();
         }
         /// <summary>
-        ///  Открыть страницу http://localhost/addressbook/edit.php
+        ///  Если открыта страница http://localhost/addressbook/edit.php
+        ///  то ничего не нужно делать
         /// </summary>
         public void SelectAddContact()
         {
+            if (driver.Url == baseURL + "/addressbook/edit.php"
+                && IsElementPresent(By.LinkText("First name")))
+            {
+                return;
+            }
             driver.FindElement(By.LinkText("add new")).Click();
         }
     }
