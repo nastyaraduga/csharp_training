@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace WebAddressbookTests
 {
@@ -17,7 +19,13 @@ namespace WebAddressbookTests
             GroupData group = new GroupData("test");
             group.Header = "test1";
             group.Footer = "test2";
+            /// Метод возвращающий список групп на странице до создания новой группы
+            List<GroupData> oldGroups = app.Groups.GetGroupList();
+
             app.Groups.Create(group);
+            /// Метод возвращающий список групп на странице после создания новой группы
+            List<GroupData> newGroups = app.Groups.GetGroupList();
+            Assert.AreEqual(oldGroups.Count + 1, newGroups.Count);
         }
 
         /// <summary>
@@ -30,7 +38,28 @@ namespace WebAddressbookTests
             GroupData group = new GroupData("");
             group.Header = "";
             group.Footer = "";
+            List<GroupData> oldGroups = app.Groups.GetGroupList();
+
             app.Groups.Create(group);
+
+            List<GroupData> newGroups = app.Groups.GetGroupList();
+            Assert.AreEqual(oldGroups.Count + 1, newGroups.Count);
+        }
+        [Test]
+        //Автотест на проверку бага при создании группы. Группа не создается с символом '
+        public void BadGroupCreationTest()
+        {
+
+            GroupData group = new GroupData("'a");
+            group.Header = "test1";
+            group.Footer = "test2";
+            /// Метод возвращающий список групп на странице до создания новой группы
+            List<GroupData> oldGroups = app.Groups.GetGroupList();
+
+            app.Groups.Create(group);
+            /// Метод возвращающий список групп на странице после создания новой группы
+            List<GroupData> newGroups = app.Groups.GetGroupList();
+            Assert.AreEqual(oldGroups.Count + 1, newGroups.Count);
         }
     }
 }
