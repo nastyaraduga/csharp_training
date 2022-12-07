@@ -1,9 +1,11 @@
-﻿namespace WebAddressbookTests
+﻿using System;
+
+namespace WebAddressbookTests
 {
     /// <summary>
     ///  Класс для работы с данными на странице создания группы
     /// </summary>
-    public class GroupData
+    public class GroupData : IEquatable<GroupData>
     {
         private string name;
         private string header = "";
@@ -14,6 +16,19 @@
             this.name = name;
         }
 
+        // определение функции реализующее сравнение групп
+        public bool Equals (GroupData other )
+        {
+            if (object.ReferenceEquals ( other, null ) )
+            {
+                return false;
+            }
+            if (object.ReferenceEquals ( this, other ) )
+            {
+                return true;
+            }
+            return Name == other.Name;
+        }
         public string Name
         {
             get

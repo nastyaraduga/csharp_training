@@ -113,7 +113,7 @@ namespace WebAddressbookTests
 
         {
             // driver.FindElement(By.XPath("//form[@action='/addressbook/group.php']")).Click();
-            driver.FindElement(By.XPath("(//input[@name ='selected[]'])[" + index + "]")).Click();
+            driver.FindElement(By.XPath("(//input[@name ='selected[]'])[" + (index + 1)+ "]")).Click();
             return this;
         }
         /// <summary>
