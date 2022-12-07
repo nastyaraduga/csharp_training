@@ -1,4 +1,6 @@
 ﻿using NUnit.Framework;
+using System.Collections.Generic;
+using System.Security.Cryptography;
 
 namespace WebAddressbookTests
 {
@@ -12,9 +14,8 @@ namespace WebAddressbookTests
         public void ContactCreationTest()
         {
 
-            ContactData contact = new ContactData("Петров", "Петр");
+            ContactData contact = new ContactData("Иванов");
             app.Contacts.Create(contact);
-            app.Groups.ReturnToMainPage();
         }
     }
 

@@ -135,7 +135,7 @@ namespace WebAddressbookTests
 
         public List<GroupData> GetGroupList()
         {
-            //Добавляем пустой список
+            //Добавляем пустой список групп
             List<GroupData> groups = new List<GroupData>();
             manager.Navigator.GoToGroupsPage();
             //сохраняем найденные элементы группы в переменную

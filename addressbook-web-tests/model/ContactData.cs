@@ -9,7 +9,7 @@
         private string firstname;
         private string lastname;
 
-        public ContactData(string firstname, string lastname)
+        public ContactData(string firstname)
         {
             Firstname = firstname;
             Lastname = lastname;

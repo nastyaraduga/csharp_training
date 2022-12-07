@@ -1,4 +1,8 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Internal;
+using System;
+using System.Collections.Generic;
+using System.Text.RegularExpressions;
 
 namespace WebAddressbookTests
 {
@@ -111,7 +115,7 @@ namespace WebAddressbookTests
         /// </summary>
         public ContactHelper RemoutContact()
         {
-            driver.FindElement(By.Id("2")).Click();
+            driver.FindElement(By.Id("25")).Click();
             driver.FindElement(By.XPath("//input[@value='Delete']")).Click();
             return this;
         }
@@ -139,6 +143,5 @@ namespace WebAddressbookTests
             }
             return this;
         }
-
     }
 }
