@@ -5,7 +5,7 @@ namespace WebAddressbookTests
     /// <summary>
     ///  Класс для работы с данными на странице создания группы
     /// </summary>
-    public class GroupData : IEquatable<GroupData>
+    public class GroupData : IEquatable<GroupData>, IComparable<GroupData>
     {
         private string name;
         private string header = "";
@@ -33,6 +33,21 @@ namespace WebAddressbookTests
         public override int GetHashCode()
         {
             return Name.GetHashCode();
+        }
+        //Возвращение строкового представления объектов GroupData
+        public override string ToString()
+        {
+            return "name=" + Name;
+        }
+        //Метод для функции сравнения объектов name
+        public int CompareTo(GroupData other)
+        {
+            if (Object.ReferenceEquals ( other, null ) )
+            {
+                return 1; 
+            }
+            return Name.CompareTo( other.Name );
+
         }
         public string Name
         {
