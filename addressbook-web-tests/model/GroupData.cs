@@ -29,6 +29,11 @@ namespace WebAddressbookTests
             }
             return Name == other.Name;
         }
+        //Возвращение хещ-кода для свойств имени группы
+        public override int GetHashCode()
+        {
+            return Name.GetHashCode();
+        }
         public string Name
         {
             get
