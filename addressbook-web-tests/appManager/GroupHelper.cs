@@ -88,6 +88,7 @@ namespace WebAddressbookTests
         public GroupHelper RemoveGroup()
         {
             driver.FindElement(By.Name("delete")).Click();
+            groupCash = null;
             return this;
         }
         /// <summary>
@@ -96,6 +97,7 @@ namespace WebAddressbookTests
         public GroupHelper SubmitGroupCreation()
         {
             driver.FindElement(By.Name("submit")).Click();
+            groupCash = null;
             return this;
         }
         /// <summary>
@@ -122,6 +124,7 @@ namespace WebAddressbookTests
         public GroupHelper SubmitGroupModification()
         {
             driver.FindElement(By.Name("update")).Click();
+            groupCash = null;
             return this;
         }
         /// <summary>
@@ -132,21 +135,32 @@ namespace WebAddressbookTests
             driver.FindElement(By.Name("edit")).Click();
             return this;
         }
+        // Cash для хранения информации о групппах
+        private List<GroupData> groupCash = null;
+
 
         public List<GroupData> GetGroupList()
         {
-            //Добавляем пустой список групп
-            List<GroupData> groups = new List<GroupData>();
-            manager.Navigator.GoToGroupsPage();
-            //сохраняем найденные элементы группы в переменную
-            ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("span.group"));
-
-            //Для каждого элемента в коллекции нужно выполнить действие
-            foreach (IWebElement element in elements)
+            if (groupCash == null)
             {
-                groups.Add(new GroupData(element.Text));
-            }    
-            return groups;
+                groupCash = new List<GroupData>();
+                manager.Navigator.GoToGroupsPage();
+                //сохраняем найденные элементы группы в переменную
+                ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("span.group"));
+
+                //Для каждого элемента в коллекции нужно выполнить действие
+                foreach (IWebElement element in elements)
+                {
+                    groupCash.Add(new GroupData(element.Text));
+                }
+            }
+            //Возвращаем свою старую копию версии cash
+            return new List<GroupData>(groupCash);
+        }
+
+        public int GetGroupCount()
+        {
+           return driver.FindElements(By.CssSelector("span.group")).Count;
         }
     }
 }
