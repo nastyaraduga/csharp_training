@@ -23,8 +23,16 @@ namespace WebAddressbookTests
 
             /// Метод возвращающий список групп на странице после создания новой группы
             List<GroupData> newGroups = app.Groups.GetGroupList();
+
+            GroupData toBeRemoved = oldGroups[0];
             oldGroups.RemoveAt(0);
-            Assert.AreEqual(oldGroups,newGroups);
+            Assert.AreEqual(oldGroups, newGroups);
+
+            foreach (GroupData group in newGroups)
+            {
+                Assert.AreNotEqual(group.Id, toBeRemoved.Id);
+            }
+
         }
     }
 }

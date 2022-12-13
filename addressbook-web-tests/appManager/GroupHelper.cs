@@ -145,13 +145,17 @@ namespace WebAddressbookTests
             {
                 groupCash = new List<GroupData>();
                 manager.Navigator.GoToGroupsPage();
-                //сохраняем найденные элементы группы в переменную
+                //Сохраняем найденные элементы группы в переменную
                 ICollection<IWebElement> elements = driver.FindElements(By.CssSelector("span.group"));
 
                 //Для каждого элемента в коллекции нужно выполнить действие
                 foreach (IWebElement element in elements)
                 {
-                    groupCash.Add(new GroupData(element.Text));
+                    //Объявляем локальную переменную для объекта 
+                    groupCash.Add(new GroupData(element.Text)
+                { 
+                    Id = element.FindElement(By.TagName("input")).GetAttribute("value")
+                });
                 }
             }
             //Возвращаем свою старую копию версии cash
