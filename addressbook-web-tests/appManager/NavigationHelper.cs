@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using System;
 
 namespace WebAddressbookTests
 {
@@ -52,5 +53,6 @@ namespace WebAddressbookTests
             }
             driver.FindElement(By.LinkText("add new")).Click();
         }
+
     }
 }

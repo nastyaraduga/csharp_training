@@ -14,8 +14,10 @@ namespace WebAddressbookTests
         [Test]
         public void ContactRemovalTest()
         {
-            ContactData contact = new ContactData("Петров");
-            app.Contacts.Create(contact);
+            ContactData newContact = new ContactData("", "");
+            newContact.FirstName = "Новый";
+            newContact.LastName = "Контакт";
+            app.Contacts.Create(newContact);
             app.Contacts.Remove(1);
         }
     }
